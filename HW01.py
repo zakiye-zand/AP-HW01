@@ -158,3 +158,31 @@ class Lab(Building):
     def __init__(self, name, address, department, number, color, other):
         super().__init__(name, address, number, color, other)  # inheritace No.3
         self.department = department
+
+class Library(Building):
+    def __init__(self, name, address, floor, number, color, other):
+        super().__init__(name, address, number, color, other)  # inheritance No.4
+        self.libname = name
+        self.floor = floor
+
+    @abstractmethod  # abbstraction
+    def borrow_book(self):
+        pass
+
+
+class Book(Library):
+    def __init__(self,name, address, floor, number, color, other, title, *author):
+        super().__init__(name, address, floor, number, color, other)  # inheritance No.5
+        self.title = title
+        self.author = author
+
+    def borrow_book(self, stu_name):
+        self.stu_name = stu_name
+        print(f"{self.stu_name} borrow {self.title} book from {self._name} library.")
+
+#sample aggrigation and polymorphism
+student1 = Student("Eliza", 18, "female", 170, 60, "ABC High School", "Thomas")
+student2 = Student("Thomas", 18, "male", 170, 60, "ABC High School", "Eliza")
+teacher1 = Teacher("Bob", 35, "male", 180, 80, "Math")
+classroom1 = Classroom(teacher1, student1, student2)
+classroom2 = Classroom(teacher1, student2)
