@@ -112,3 +112,49 @@ class School:
 
         for classroom in self._classrooms: #polymorphism
             classroom.start_class()  # aggregation No.3
+
+class Department:
+    def __init__(self, name, head_teacher):
+        self._name = name
+        self.head_teacher = head_teacher
+
+    def get_head_teacher(self):
+        print(
+            f"The head teacher of {self._name} department is {self.head_teacher.name}.") #aggrigation No.4 from person
+
+
+class University:
+    def __init__(self, name, location, departments):
+        self._name = name
+        self.location = location
+        self.departments = departments
+
+    def get_departments(self):
+        print(f"The {self._name} university has the following departments:")
+
+        for department in self.departments:
+            print(department.name) #aggrigation No.5
+
+
+class Building:
+    def __init__(self, name, address, number, color, other):
+        self._name = name
+        self.address = address
+        self.number = number
+        self.color = color
+        self.otherstupidthingforthelovelyta = other
+
+    def Lost(self):
+        print(f"OH , I'm lost, come to {self.address}")
+
+    def artist(self):
+        print(f"what a nice color , i love {self.color}")
+
+    def massage(self):
+        print(f"I have a question from who first said that we should make fifteen classes with 5 method and else ... 'why'? ")
+
+
+class Lab(Building):
+    def __init__(self, name, address, department, number, color, other):
+        super().__init__(name, address, number, color, other)  # inheritace No.3
+        self.department = department
