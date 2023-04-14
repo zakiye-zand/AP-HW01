@@ -66,3 +66,49 @@ class Teacher(Person):
             print(f"Mr.{self._name} is talking")
         elif self._gender == 'female':
             print(f"Mrs.{self._name} is talking")
+class Course:
+    def __init__(self, name, description, teacher):
+        self._name = name
+        self.__description = description
+        self._teacher = teacher
+
+    def get_teacher(self):
+        print(f"The teacher for {self._name} is {self._teacher.name}.") #aggrigation
+
+class Knock:
+
+    def knock():
+        print('knock knock!')
+
+
+class Classroom:
+
+    def __init__(self, teacher, *student):
+
+        self.student = student
+        self.teacher = teacher
+        self.knock = Knock()  # compositon No.2
+
+    def start_class(self):
+
+        print(f"{self.teacher.name} starts the class.")  # aggregatin No.1
+
+        for student in self.student:  # polymorphism No.2 & aggregatin No.2 by student
+            student.study()
+
+    def Knock(self):
+
+        self.knock.knock()
+
+
+class School:
+    def __init__(self, name, location, classrooms):
+        self._name = name
+        self._location = location
+        self._classrooms = classrooms
+
+    def start_school_day(self):
+        print(f"{self._name} starts the school day.")
+
+        for classroom in self._classrooms: #polymorphism
+            classroom.start_class()  # aggregation No.3
