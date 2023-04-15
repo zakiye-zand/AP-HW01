@@ -75,7 +75,7 @@ class Course:
     def get_teacher(self):
         print(f"The teacher for {self._name} is {self._teacher.name}.") #aggrigation
 
-class Knock:
+class Door:
 
     def knock():
         print('knock knock!')
@@ -87,7 +87,7 @@ class Classroom:
 
         self.student = student
         self.teacher = teacher
-        self.knock = Knock()  # compositon No.2
+        self.door = Door()  # compositon No.2
 
     def start_class(self):
 
@@ -97,8 +97,7 @@ class Classroom:
             student.study()
 
     def Knock(self):
-
-        self.knock.knock()
+        self.door.knock()
 
 
 class School:
