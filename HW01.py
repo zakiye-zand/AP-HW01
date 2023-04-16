@@ -161,9 +161,10 @@ class Building:
 
 
 class Lab(Building):
-    def __init__(self, name, address, department, number, color, other):
+    def __init__(self, department, headlab,  name, address, number, color, other):
         super().__init__(name, address, number, color, other)  # inheritace No.3
         self.department = department
+        self.headlab = headlab #aggrigation from person
 
 class Library(Building):
     def __init__(self, name, address, floor, number, color, other):
