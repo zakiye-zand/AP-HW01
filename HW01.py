@@ -27,7 +27,7 @@ class Person:
 
 class Friend:
 
-    def __init__(self, *name):  # polymorphism No.1
+    def __init__(self, *name):  
         self._name = name
 
     def greeting(self):
@@ -51,6 +51,9 @@ class Student(Person):
     def talk(self):     # abstraction No.1
         print(f"{self._name} is talking with {self._friend._name}")
 
+    def perpose():  #polumorphism No.1
+        print("student's perpose is graduating")    
+
 
 class Teacher(Person):
 
@@ -66,6 +69,10 @@ class Teacher(Person):
             print(f"Mr.{self._name} is talking")
         elif self._gender == 'female':
             print(f"Mrs.{self._name} is talking")
+
+    def perpose():  #polumorphism No.1
+        print("teacher's perpose is to graduate good students")    
+
 class Course:
     def __init__(self, name, description, teacher):
         self._name = name
@@ -109,7 +116,7 @@ class School:
     def start_school_day(self):
         print(f"{self._name} starts the school day.")
 
-        for classroom in self._classrooms: #polymorphism
+        for classroom in self._classrooms: 
             classroom.start_class()  # aggregation No.3
 
 class Department:
